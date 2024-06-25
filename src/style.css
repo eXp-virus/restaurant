@@ -1,9 +1,20 @@
 html {
     --font-color: white;
+    --background-color:#0f172a;
+}
+
+* {
+    color: var(--font-color);
+}
+
+body {
+    background-color: var(--background-color);
+    line-height: 1.25rem;
+    word-spacing: 0.5ch;
+    letter-spacing: 0.05rem;
 }
 
 .header {
-    outline: 2px solid red;
     display: flex;
     align-items: center;
     gap: calc(20vw + 2rem);
@@ -11,16 +22,56 @@ html {
 
 .logo {
     margin-left: 3rem;
+    text-decoration: dashed;
+    color: var(--font-color);
 }
 
 .buttons button {
     font-size: 16px;
     margin-right: 1em;
     cursor: pointer;
-    background-color: #0ea5e9;
+    background: none;
     color: var(--font-color);
     font-weight: bold;
     padding: 0.5em 1em;
     border: none;
-    border-radius: 8px;
+    border-radius: 4px;
+}
+
+.buttons button:hover {
+    border-bottom: 2px solid white;
+}
+
+.main-header {
+    display: flex;
+    gap: 3rem;
+}
+
+.home-image {
+   height: 200px;
+   width: 40vw;
+   min-width: 200px;
+   border: 2px solid aqua;
+}
+
+.main-header div:last-child {
+    font-style: italic;
+    max-width: 65ch;
+}
+
+.cards {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin: 2rem;
+}
+
+.cards div {
+    outline: 2px solid white;
+    height: 150px;
+    width: 150px;
+}
+
+.reviews {
+    outline: 2px solid white;
 }
