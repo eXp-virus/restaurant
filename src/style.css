@@ -1,23 +1,30 @@
 html {
-    --font-color: white;
     --background-color:#0f172a;
+    --font-size: clamp(1rem, 1.2vw + 0.3rem, 3rem);
+    --header-color: #2d3a58;
+    --word-spacing: 0.3ch;
+    --letter-spacing: 0.08ch;
 }
 
 * {
-    color: var(--font-color);
+    box-sizing: border-box;
 }
 
 body {
-    background-color: var(--background-color);
     line-height: 1.25rem;
-    word-spacing: 0.5ch;
-    letter-spacing: 0.05rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .header {
     display: flex;
     align-items: center;
     gap: calc(20vw + 2rem);
+    background-color: var(--background-color);
+    color: white;
+    padding: 0.5rem;
 }
 
 .logo {
@@ -44,34 +51,161 @@ body {
 
 .main-header {
     display: flex;
+    padding: 2rem;
     gap: 3rem;
+    background-color: #030712db;
+    color: white;
+    word-spacing: var(--word-spacing);
+    letter-spacing: var(--letter-spacing);
 }
 
 .home-image {
-   height: 200px;
-   width: 40vw;
-   min-width: 200px;
-   border: 2px solid aqua;
+   height: 300px;
+   width: 450px;
+   min-width: 300px;
+}
+
+.home-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
 }
 
 .main-header div:last-child {
-    font-style: italic;
-    max-width: 65ch;
+    width: 55ch;
+    min-width: 30ch;
+    font-size: var(--font-size);
 }
 
-.cards {
+.chef {
     display: flex;
-    gap: 2rem;
     justify-content: center;
-    margin: 2rem;
+    padding: 4rem 3rem;
+    font-size: var(--font-size);
+    gap: 2rem;
+    background-image: url(./images/cheese.avif);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
-.cards div {
-    outline: 2px solid white;
+.chef img {
+    height: 400px;
+    width: 300px;
+}
+
+.chef div {
+    width: 65ch;
+}
+
+.chef h1 {
+    font-size: 50px;
+    color: var(--header-color);
+    margin-bottom: 30px;
+    padding-left: 2rem;
+}
+
+.chef p {
+    font-size: calc(1vw + 0.5rem);
+    word-spacing: var(--word-spacing);
+    letter-spacing: var(--letter-spacing);
+    font-size: var(--font-size);
+    min-width: 30ch;
+}
+
+.chef p::first-letter {
+    initial-letter: 2;
+}
+
+.reviews {
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.reviews img {
+    border-radius: 50%;
+    outline: 2px solid red;
     height: 150px;
     width: 150px;
 }
 
-.reviews {
-    outline: 2px solid white;
+.reviews p {
+    width: 55ch;
+    align-self: center;
+    font-style: italic;
+    font-size: var(--font-size);
+}
+
+/* menu page */
+.menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 2rem;
+    justify-items: center;
+    background: linear-gradient(to right, #373b44c2, #08245050);
+}
+
+.item {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+    padding: 1rem 0;
+}
+
+.item img {
+    height: 200px;
+    width: 200px;
+    border-radius: 12px;
+}
+
+.item div {
+    width: 65ch;
+}
+
+.item h2 {
+    color: var(--header-color);
+}
+
+.item  p {
+    font-size: var(--font-size);
+    word-spacing: var(--word-spacing);
+    letter-spacing: var(--letter-spacing);
+}
+
+/* footer */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    color: #cbd5e1;
+    margin-top: auto;
+}
+
+/* reserve table */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container h1 {
+    color: var(--header-color);
+    font-size: 50px;
+}
+
+.book-table {
+    background-color: rgba(2, 38, 92, 0.114);
+    border-radius: 16px;
+    height: 150px;
+    width: 30vw;
+    font-size: var(--font-size);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

@@ -1,7 +1,7 @@
 import './style.css';
-import { createHeader, createHtmlCards, createReviewSection } from './home';
-import { createMenu } from './menu';
+import { createHeader, createChef, createReviewSection } from './home';
 import { createForm } from './reserve';
+import { createItems } from './menu';
 
 const home = document.getElementById('home');
 const menu = document.getElementById('menu');
@@ -17,11 +17,11 @@ function renderPage(e) {
     container.innerHTML = '';
     if(e.target.id === 'home') {
         console.log('home clicked');
-        renderElements([createHeader, createHtmlCards, createReviewSection]);
+        renderElements([createHeader, createChef, createReviewSection]);
     }
 
     if(e.target.id === 'menu') {
-        renderElements([createMenu]);
+        renderElements([createItems]);
     }
 
     if(e.target.id === 'table') {
@@ -30,9 +30,9 @@ function renderPage(e) {
 }
 
 function renderElements(array) {
-   // const container = document.getElementById('container');
-
     for(let i of array) {
         container.appendChild(i());
     }
 }
+
+renderElements([createHeader, createChef, createReviewSection]);
